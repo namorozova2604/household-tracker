@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form action="/input" method="post">
+  <input autocomplete="off" autofocus class="form-control" name="task" type="text">
+  <input type="submit">
+</form>
+
+<a href="/"><button>Back to tracker</button></a>
+
+{% endblock %}
+

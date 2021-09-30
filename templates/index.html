@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>Tracker</h1>
+<table>
+    <tr>
+      <th>Task</th>
+      <th>Status</th>
+    </tr>
+    {% for task in current_tasks %}
+        <tr>
+            <td>{{ task }}</td>
+            <td class="emptyField"></td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+<p>  
+    <a href="input"><button>Add tasks</button></a>
+</p>
+
+<script>
+    "use strict";
+    //выводит во щелчку слово щелчок
+    function handler1() {
+        alert('щилчок оп оп');
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let emptyField = document.getElementsByClassName("emptyField"); //возвращает массив элеентов
+        for (let i = 0; i < emptyField.length; i++) { //проходим по всем элементам коллекции
+          emptyField[i].addEventListener("click", handler1); 
+        }
+    });
+</script>
+
+{% endblock %}
+
+<!--настроить чтобы было ровно всегда, и см бутрстрэп-->
